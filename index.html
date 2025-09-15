@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Andy Hines – Web Developer Portfolio</title>
+  <meta name="description" content="Portfolio of web projects: WordPress implementations, custom PHP (MVC), SEO, and landing pages." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{ --bg:#0b0c10; --card:#11131a; --ink:#e8edf2; --muted:#a5b0bb; --brand:#5dd3ff; --accent:#8b5cf6; --ring:rgba(93,211,255,.35) }
+    @media (prefers-color-scheme: light){ :root{ --bg:#f7fafc; --card:#ffffff; --ink:#1a202c; --muted:#4a5568; --brand:#2663eb; --accent:#7c3aed; --ring:rgba(38,99,235,.25) } }
+    *{ box-sizing:border-box }
+    html,body{ margin:0; height:100%; font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif; color:var(--ink); background:radial-gradient(1200px 800px at 80% -10%, rgba(93,211,255,.08), transparent 60%), radial-gradient(800px 600px at -10% 10%, rgba(139,92,246,.08), transparent 60%), var(--bg) }
+    a{ color:inherit; text-decoration:none }
+    .wrap{ max-width:1100px; margin:0 auto; padding:24px }
+    header{ display:flex; align-items:center; justify-content:space-between; gap:16px; padding:12px 0 }
+    .logo{ font-weight:700; letter-spacing:.3px }
+    nav a{ padding:10px 12px; border-radius:10px; color:var(--muted) }
+    nav a:hover{ background:rgba(255,255,255,.06); color:var(--ink) }
+    .btn{ display:inline-block; padding:10px 14px; border-radius:12px; background:linear-gradient(135deg,var(--brand),var(--accent)); color:#fff; font-weight:600; box-shadow:0 10px 25px -10px var(--ring) }
+
+    .hero{ display:grid; grid-template-columns:1.2fr .8fr; gap:28px; padding:42px 0 18px }
+    .hero h1{ font-size:clamp(28px,4vw,42px); line-height:1.1; margin:.1em 0 }
+    .hero p{ color:var(--muted); font-size:1.05rem }
+    .hero .card{ background:linear-gradient(180deg, rgba(255,255,255,.06), transparent); border:1px solid rgba(255,255,255,.06); padding:22px; border-radius:18px }
+    .tags{ display:flex; flex-wrap:wrap; gap:10px; margin-top:14px }
+    .tag{ padding:6px 10px; border:1px solid rgba(255,255,255,.12); border-radius:999px; font-size:.85rem; color:var(--muted) }
+
+    .section{ margin-top:42px }
+    .section h2{ font-size:1.6rem; margin:0 0 14px }
+    .grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px }
+    .card{ background:var(--card); border:1px solid rgba(255,255,255,.06); border-radius:16px; overflow:hidden }
+    .thumb{ aspect-ratio:16/9; background:linear-gradient(135deg, rgba(93,211,255,.18), rgba(139,92,246,.18)); display:flex; align-items:center; justify-content:center; color:#fff; font-weight:700 }
+    .thumb img{ width:100%; height:100%; /*object-fit:contain;*/ display:block }
+    .card-body{ padding:16px }
+    .meta{ display:flex; gap:8px; flex-wrap:wrap; margin:10px 0 14px }
+    .pill{ font-size:.78rem; color:var(--muted); border:1px solid rgba(255,255,255,.12); padding:6px 10px; border-radius:999px }
+    .row{ display:flex; gap:10px; align-items:center; flex-wrap:wrap }
+    .ghost{ padding:10px 12px; border:1px solid rgba(255,255,255,.16); border-radius:12px; color:var(--ink) }
+    .ghost:hover{ border-color:var(--brand) }
+
+    .about{ display:grid; grid-template-columns:1fr 1fr; gap:18px }
+    .list{ display:flex; flex-wrap:wrap; gap:10px }
+
+    footer{ margin:40px 0 30px; color:var(--muted); font-size:.95rem }
+
+    @media (max-width:900px){ .hero{ grid-template-columns:1fr } .grid{ grid-template-columns:1fr 1fr } }
+    @media (max-width:640px){ nav{ display:none } .grid{ grid-template-columns:1fr } .wrap{ padding:18px } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">Andy Hines <span style="color:var(--brand)">•</span> Web Developer</div>
+      <nav>
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a class="btn" href="#contact">Hire Me</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="card">
+        <h1>I build fast, secure, SEO‑ready websites.</h1>
+        <p>Over 15 years delivering WordPress implementations, custom PHP (MVC) features, performance tuning, and full SEO optimization.</p>
+        <div class="tags">
+          <span class="tag">PHP (MVC)</span>
+          <span class="tag">JavaScript / jQuery (AJAX)</span>
+          <span class="tag">WordPress</span>
+          <span class="tag">MySQL</span>
+          <span class="tag">Bootstrap</span>
+          <span class="tag">Technical SEO</span>
+          <span class="tag">Responsive Design</span>
+        </div>
+        <div style="margin-top:18px" class="row">
+          <a class="btn" href="#projects">See Projects</a>
+          <a class="ghost" href="#contact">Contact</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="thumb" aria-label="Featured image"><a class="ghost" href="https://www.costaricantraveler.com/" target="_blank" rel="noopener"><img alt="Costa Rican Traveler" title="Costa Rican Traveler" src="images/crt.jpg" width="559" height="413"></a></div>
+        <div class="card-body" style="color:var(--muted)"></div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <h2>Recent Projects</h2>
+      <div class="grid">
+        <!-- Project: INSPIN -->
+        <article class="card">
+          <div class="thumb"><img alt="Insider Sports Information" title="Insider Sports Information" src="images/inspin.jpg" width="559" height="424"></div>
+          <div class="card-body">
+            <h3 style="margin:.2em 0">INSPIN</h3>
+            <div class="meta">
+              <span class="pill">WordPress (template acquisition + customization)</span>
+              <span class="pill">PHP (custom MVC)</span>
+              <span class="pill">jQuery / AJAX</span>
+              <span class="pill">Full SEO</span>
+            </div>
+            <p style="color:var(--muted); margin:0 0 12px">Purchased and installed a WordPress template, configured and customized colors, typography, and layout. Added custom PHP MVC features, CSS tweaks, and AJAX behaviors. Delivered complete technical SEO optimization.</p>
+            <div class="row">
+              <a class="ghost" href="https://www.inspin.com/" target="_blank" rel="noopener">Visit site</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project: SportsBettingHandicapper -->
+        <article class="card">
+          <div class="thumb"><img alt="Sports Betting Handicapper" title="Sports Betting Handicapper" src="images/sbh.jpg" width="559" height="447"></div>
+          <div class="card-body">
+            <h3 style="margin:.2em 0">Sports Betting Handicapper</h3>
+            <div class="meta">
+              <span class="pill">WordPress (template acquisition + customization)</span>
+              <span class="pill">PHP (custom MVC)</span>
+              <span class="pill">CSS / jQuery</span>
+              <span class="pill">Technical SEO</span>
+            </div>
+            <p style="color:var(--muted); margin:0 0 12px">Implemented and tailored a premium WordPress theme. Extended functionality with a custom PHP MVC framework, AJAX components, and site‑wide SEO improvements.</p>
+            <div class="row">
+              <a class="ghost" href="https://www.sportsbettinghandicapper.com/" target="_blank" rel="noopener">Visit site</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project: Costa Rican Properties -->
+        <article class="card">
+          <div class="thumb"><img alt="Costa Rican Properties" title="Costa Rican Properties" src="images/crp.jpg" width="559" height="396"></div>
+          <div class="card-body">
+            <h3 style="margin:.2em 0">Costa Rican Properties</h3>
+            <div class="meta">
+              <span class="pill">WordPress</span>
+              <span class="pill">PHP (custom MVC)</span>
+              <span class="pill">Performance</span>
+              <span class="pill">SEO</span>
+            </div>
+            <p style="color:var(--muted); margin:0 0 12px">Acquired and configured a WordPress template, personalized brand colors and fonts, and built custom PHP features to support listings and lead capture. Full SEO optimization.</p>
+            <div class="row">
+              <a class="ghost" href="https://www.costaricanproperties.com/" target="_blank" rel="noopener">Visit site</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project: Costa Rican Traveler -->
+        <article class="card">
+          <div class="thumb"><img alt="Costa Rican Traveler" title="Costa Rican Traveler" src="images/crt.jpg" width="559" height="413"></div>
+          <div class="card-body">
+            <h3 style="margin:.2em 0">Costa Rican Traveler</h3>
+            <div class="meta">
+              <span class="pill">WordPress</span>
+              <span class="pill">Custom PHP (MVC)</span>
+              <span class="pill">jQuery / AJAX</span>
+              <span class="pill">SEO</span>
+            </div>
+            <p style="color:var(--muted); margin:0 0 12px">Installed and customized a WordPress theme with brand styles and UX adjustments. Added PHP MVC modules and AJAX interactivity. Comprehensive SEO setup.</p>
+            <div class="row">
+              <a class="ghost" href="https://www.costaricantraveler.com/" target="_blank" rel="noopener">Visit site</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project: OnlineCasinoBlackjack (Landing) -->
+        <article class="card">
+          <div class="thumb"><img alt="Online Casino Blackjack" title="Online Casino Blackjack" src="images/onlinecasinoblackjack.jpg" width="559" height="416"></div>
+          <div class="card-body">
+            <h3 style="margin:.2em 0">Online Casino Blackjack (Landing)</h3>
+            <div class="meta">
+              <span class="pill">From scratch</span>
+              <span class="pill">PHP</span>
+              <span class="pill">Bootstrap</span>
+              <span class="pill">CSS & Media Queries</span>
+            </div>
+            <p style="color:var(--muted); margin:0 0 12px">Landing page built from the ground up for an online casino. Responsive layout with Bootstrap, custom CSS, and performance best practices.</p>
+            <div class="row">
+              <a class="ghost" href="https://www.onlinecasinoblackjack.com/" target="_blank" rel="noopener">Visit site</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project: BlackjackCardCounting (Landing) -->
+        <article class="card">
+          <div class="thumb"><img alt="Blackjack Card Counting" title="Blackjack Card Counting" src="images/blackjackcardcounting.jpg" width="559" height="426"></div>
+          <div class="card-body">
+            <h3 style="margin:.2em 0">Blackjack Card Counting (Landing)</h3>
+            <div class="meta">
+              <span class="pill">From scratch</span>
+              <span class="pill">PHP</nspan>
+              <span class="pill">Bootstrap</span>
+              <span class="pill">CSS & Media Queries</span>
+            </div>
+            <p style="color:var(--muted); margin:0 0 12px">Designed and coded a highly focused landing page for casino traffic. Mobile‑first, fast, and conversion‑oriented.</p>
+            <div class="row">
+              <a class="ghost" href="https://www.blackjackcardcounting.com/" target="_blank" rel="noopener">Visit site</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project: BetBitcoinOnline (Landing) -->
+        <article class="card">
+          <div class="thumb"><img alt="Bet Bitcoin Online" title="Bet Bitcoin Online" src="images/betbitcoinonline.jpg" width="559" height="396"></div>
+          <div class="card-body">
+            <h3 style="margin:.2em 0">Bet Bitcoin Online (Landing)</h3>
+            <div class="meta">
+              <span class="pill">From scratch</span>
+              <span class="pill">PHP</span>
+              <span class="pill">Bootstrap</span>
+              <span class="pill">CSS & Media Queries</span>
+            </div>
+            <p style="color:var(--muted); margin:0 0 12px">Custom landing page for a crypto‑betting niche. Clean structure, fast load times, and responsive design.</p>
+            <div class="row">
+              <a class="ghost" href="https://www.betbitcoinonline.com/" target="_blank" rel="noopener">Visit site</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="about" class="section about">
+      <div class="card" style="padding:20px">
+        <h2>About</h2>
+        <p style="color:var(--muted)">Proactive, solutions‑oriented web developer. Strong background in WordPress implementations, custom PHP MVC features, jQuery/AJAX, MySQL, Bootstrap, and complete technical SEO. Focused on performance, UX, and measurable results.</p>
+        <div class="list">
+          <span class="pill">15+ years of experience</span>
+          <span class="pill">Mid WordPress</span>
+          <span class="pill">Email automation & CRM</span>
+          <span class="pill">APIs & integrations</span>
+        </div>
+      </div>
+      <div class="card" style="padding:20px">
+        <h2>Services</h2>
+        <ul style="margin:0; padding-left:18px; color:var(--muted)">
+          <li>WordPress setup, customization, bug fixes and maintenance.</li>
+          <li>Custom PHP (MVC), jQuery/AJAX features</li>
+          <li>Performance tuning and full technical SEO</li>
+          <li>Landing pages from scratch with Bootstrap</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="card" style="padding:20px">
+        <h2>Contact</h2>
+        <p style="color:var(--muted)">Have a project in mind? Let's talk.</p>
+        <div class="row">
+          <a class="btn" href="mailto:alhines@gmail.com">alhines@gmail.com</a>
+          <a class="ghost" href="https://www.linkedin.com/in/andy-hines-77454176/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="ghost" href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="y"></span> Andy Hines - Web Developer.
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
